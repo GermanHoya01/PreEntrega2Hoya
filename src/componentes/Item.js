@@ -20,7 +20,6 @@ const Item = ({id, nombre, imagen, precio, descripcion, stock}) => {
 
             </section>
             <footer>
-                <link>Ver detalle : {descripcion}</link>
             </footer> 
         </article>
     );
