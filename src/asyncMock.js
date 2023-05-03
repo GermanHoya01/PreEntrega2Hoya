@@ -25,8 +25,14 @@ const products = [
     },
 ];
 
+const filtrar = (productos, categoria) => {
+    const productosFiltrados = productos.filter(producto => producto.categoria.toLowerCase() === categoria.toLowerCase());
+    return productosFiltrados;
+}
+
+
 export const getProducts = () => {
-    return new Promise ((resolve) => {
+    return new Promise((resolve) => {
         setTimeout(() => {
             resolve(products);
         }, 500)
