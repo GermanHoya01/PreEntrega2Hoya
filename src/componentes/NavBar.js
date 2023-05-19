@@ -1,21 +1,30 @@
-import CartWidget from "./CartWidget"
-import { NavLink } from "react-router-dom";
+import { Container, Nav, Navbar as BNavbar } from "react-bootstrap";
+//import CartWidget from "./CartWidget"//
+import {  Link } from "react-router-dom";
 
-const NavBar = () => {
+function Navbar() {
     return (
-        <header className="NavBar_header">
-            <NavLink to="/">
-                <h1 className="NavBar__title">Mi Tienda</h1>
-            </NavLink>
-            <nav className="header__nav">
-                <NavLink to="/category/1" className="header__link link">categoria 1</NavLink>
-                <NavLink to="/category/2" className="header__link link">categoria 2</NavLink>
-                <NavLink to="/carrito" className="header__link link">carrito</NavLink>
-
-                <NavLink to="/cart" className="header__link link"><CartWidget /></NavLink>
-            </nav>
-        </header>
-    )
+        
+            <BNavbar bg="dark" variant="dark">
+                <Container>
+                    <BNavbar.Brand as={Link} to="/">
+                        Mi Tienda
+                    </BNavbar.Brand>
+                    <Nav className="me-auto">
+                        <Nav.Link as={Link} to="/category/1">
+                            1
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/category/2">
+                            2
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/category/3">
+                            3
+                        </Nav.Link>
+                    </Nav>
+                </Container>
+            </BNavbar>
+        
+    );
 }
 
-export default NavBar;
+export default Navbar;
